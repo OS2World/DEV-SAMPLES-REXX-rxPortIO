@@ -1,0 +1,7 @@
+/* Event Clicked/selected - Read  1001 */
+Arg window self
+
+return_data = PIORead( port_Address )       /* read data at port_address (return_data is decimal) */
+
+/* Set item value Text1002 Text */
+CALL VpSetItemValue window,1002,'READ: ' || return_data

@@ -1,0 +1,17 @@
+/* Form events - Opened */
+Arg window 
+
+CALL RXFuncAdd 'PIOLoadFuncs', 'RXPORTIO', 'PIOLoadFuncs'
+CALL PIOLoadFuncs
+
+/* Set range 1004 Spin Button */
+CALL VpSetRange window,1004,0,255  /* Set spin button range*/
+
+/* Set item value 1004 Spin Button */
+CALL VpSetItemValue window,1004,'0'
+
+port_Address = X2D('300')    /* enter port address in hex. Port_address variable is converted from hex to decimal */
+data_value = 0               /* set I/O data_value to zero */
+
+/* Set item value 1000 Entry Field */
+CALL VpSetItemValue window,1000,port_Address

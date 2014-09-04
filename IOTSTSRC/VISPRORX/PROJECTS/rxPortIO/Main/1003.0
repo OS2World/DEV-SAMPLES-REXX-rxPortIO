@@ -1,0 +1,9 @@
+/* Event Clicked/selected - Write  1003 */
+Arg window self
+
+return_data = PIOWrite( port_Address, data_value )    /* write data_value (decimal) to port_address (must be decimal) */
+
+/* NOP */  /* NOTE: You may have to add this NOP if PIOWrite is the last statement in an event. See rxPortIO.INF for details */
+
+/* Set item value Text1002 Text */
+CALL VpSetItemValue window,1002,'WRITE: ' || return_data
